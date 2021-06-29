@@ -293,7 +293,6 @@ public class Finance extends JFrame{
 			public void actionPerformed(ActionEvent e) {
 		try {
 					File file= new File("C:\\Users\\USER\\Documents\\Eclipsea\\Assigment3\\src\\Assigment3\\finance.txt");
-					
 					if(!file.exists()) {
 						file.createNewFile();
 					}
@@ -316,6 +315,7 @@ public class Finance extends JFrame{
 			}
 		});
 			
+			
 		btnSaveButton.setBackground(new Color(255, 192, 203));
 		btnSaveButton.setFont(new Font("Tw Cen MT", Font.BOLD, 20));
 		btnSaveButton.setBounds(457, 56, 120, 46);
@@ -333,7 +333,7 @@ public class Finance extends JFrame{
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null, null, null, null, null, null},
+				{},
 			},
 			new String[] {
 				"Employee Quantity", "Employee Salary", "Prize", "Utility Fee", "Ads fee", "Participant Quantity", "Registration Fee", "Budget", "Total Income", "Net Profit"
@@ -341,4 +341,11 @@ public class Finance extends JFrame{
 		));
 		scrollPane.setViewportView(table);
 	}
+
+	public void update(String salary) {
+		EmpSalaryTextField.setText(salary);
+		// TODO Auto-generated method stub
+		
+	}
+
 }

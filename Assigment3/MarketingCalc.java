@@ -2,8 +2,6 @@ package Assigment3;
 import java.util.Scanner;
 public class MarketingCalc {
 	
-	
-
 	public class MarketingCalc extends Basketball implements Payment {
 		
 		Scanner sc = new Scanner(System.in);

@@ -187,6 +187,7 @@ public class Employees extends JFrame{
 		JButton btnNewButton = new JButton("ADD");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 				String gender= " ";
 					
 				if (male.isSelected()) {
@@ -196,7 +197,7 @@ public class Employees extends JFrame{
 					gender = female.getText();
 				
 				}
-			
+				
 				DefaultTableModel model = (DefaultTableModel) table.getModel();
 				model.addRow(new Object[]{
 						comboBoxDepartment.getSelectedItem(),
@@ -204,6 +205,8 @@ public class Employees extends JFrame{
 						IDtextField.getText(),
 						gender,
 						SalarytextField.getText(),
+						
+						
 						
 												
 				});
@@ -252,7 +255,7 @@ public class Employees extends JFrame{
 		});
 		btnNewButton_2.setFont(new Font("Tw Cen MT", Font.BOLD, 20));
 		btnNewButton_2.setBackground(new Color(221, 160, 221));
-		btnNewButton_2.setBounds(10, 11, 138, 46);
+		btnNewButton_2.setBounds(10, 11, 121, 46);
 		panel_3.add(btnNewButton_2);
 		
 		JButton btnNewButton_3 = new JButton("PRINT");
@@ -267,7 +270,7 @@ public class Employees extends JFrame{
 		});
 		btnNewButton_3.setFont(new Font("Tw Cen MT", Font.BOLD, 20));
 		btnNewButton_3.setBackground(new Color(221, 160, 221));
-		btnNewButton_3.setBounds(158, 11, 128, 46);
+		btnNewButton_3.setBounds(141, 11, 121, 46);
 		panel_3.add(btnNewButton_3);
 		
 		JButton btnNewButton_4 = new JButton("EXIT");
@@ -282,7 +285,7 @@ public class Employees extends JFrame{
 	});
 		btnNewButton_4.setFont(new Font("Tw Cen MT", Font.BOLD, 20));
 		btnNewButton_4.setBackground(new Color(221, 160, 221));
-		btnNewButton_4.setBounds(446, 11, 189, 46);
+		btnNewButton_4.setBounds(533, 11, 102, 46);
 		panel_3.add(btnNewButton_4);
 		
 		JButton btnNewButton_6 = new JButton("UPLOAD");
@@ -313,8 +316,27 @@ public class Employees extends JFrame{
 	});
 		btnNewButton_6.setBackground(new Color(221, 160, 221));
 		btnNewButton_6.setFont(new Font("Tw Cen MT", Font.BOLD, 20));
-		btnNewButton_6.setBounds(296, 11, 138, 46);
+		btnNewButton_6.setBounds(272, 11, 126, 46);
 		panel_3.add(btnNewButton_6);
+		
+		JButton btnFinance = new JButton("FINANCE");
+		btnFinance.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String salary = SalarytextField.getText();
+				Finance fin = new Finance();
+				fin.update(salary);
+				
+				fin.setVisible(true);
+				dispose();
+			
+				
+			}
+		});
+		btnFinance.setFont(new Font("Tw Cen MT", Font.BOLD, 20));
+		btnFinance.setBackground(new Color(221, 160, 221));
+		btnFinance.setBounds(408, 11, 115, 46);
+		panel_3.add(btnFinance);
 		
 		JButton btnNewButton_5 = new JButton("UPLOAD");
 		btnNewButton_5.addActionListener(new ActionListener() {
@@ -326,17 +348,8 @@ public class Employees extends JFrame{
 		setBounds(100, 100, 681, 501);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-
-	public void setModalExclusionType(Object object) {
-		// TODO Auto-generated method stub
 		
-	}
-
-	public void setVisible(boolean b) {
-		// TODO Auto-generated method stub
 		
-	}
-
-});
+		});
 	}
 	};

@@ -102,7 +102,7 @@ public class MainPage extends JFrame {
 		JButton btnNewButton_1 = new JButton("PARTICIPANT");
 		btnNewButton_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Participant pa = new Participant();
+				Marketing pa = new Marketing();
 				pa.setModalExclusionType(null);
 				pa.setVisible(true);
 				dispose();

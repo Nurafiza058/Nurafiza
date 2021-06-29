@@ -76,6 +76,21 @@ public class Participant extends JFrame {
 		lblNewLabel.setBounds(312, 11, 276, 48);
 		panel.add(lblNewLabel);
 		
+		JButton btnNewButton_6 = new JButton("Back");
+		btnNewButton_6.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MainPage frame =  new MainPage();
+				frame.setModalExclusionType(null);
+				frame.setVisible(true);
+				dispose();
+				
+			}
+		});
+		btnNewButton_6.setBackground(new Color(255, 228, 181));
+		btnNewButton_6.setFont(new Font("Tw Cen MT", Font.BOLD, 20));
+		btnNewButton_6.setBounds(10, 11, 102, 48);
+		panel.add(btnNewButton_6);
+		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBorder(new LineBorder(new Color(128, 0, 0), 5));
 		panel_1.setBackground(new Color(240, 128, 128));
@@ -202,6 +217,7 @@ public class Participant extends JFrame {
 						NumberOfParticipantTextField.getText(),
 						category,
 						comboBoxCourt.getSelectedItem(),
+						
 					
 						
 						
@@ -330,7 +346,7 @@ public class Participant extends JFrame {
 		});
 		btnNewButton_3.setBackground(new Color(220, 20, 60));
 		btnNewButton_3.setForeground(new Color(220, 220, 220));
-		btnNewButton_3.setFont(new Font("Tw Cen MT", Font.BOLD, 14));
+		btnNewButton_3.setFont(new Font("Tw Cen MT", Font.BOLD, 11));
 		btnNewButton_3.setBounds(354, 12, 100, 63);
 		panel_3.add(btnNewButton_3);
 		

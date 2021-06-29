@@ -1,0 +1,1 @@
+Ticket	Ali	12345	MALE	1000	

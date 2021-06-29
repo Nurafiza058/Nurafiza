@@ -17,6 +17,7 @@ import javax.swing.JComboBox;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.text.DecimalFormat;
 import java.awt.event.ActionEvent;
 
 public class Marketing extends JFrame{
@@ -28,6 +29,8 @@ public class Marketing extends JFrame{
 	/**
 	 * Launch the application.
 	 */
+	
+	   private static DecimalFormat df2 = new DecimalFormat("#.##");
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -145,17 +148,48 @@ public class Marketing extends JFrame{
 		contentPane.add(btnRegisterParticipant);
 		
 		btnNewButton.addActionListener(event -> payment());
-	}
-
-	public void setModalExclusionType(Object object) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public void setVisible(boolean b) {
-		// TODO Auto-generated method stub
 	
 		
+
+
+	
+}
+public void payment() {
+PriceRate pay = new PriceRate();
+
+	String c = DaytextField.getText();
+	String discpay;
+	
+	
+	/*
+	if(c == sat) {
+		
+		discpay = String.valueOf(df2.format(pay.totalPrice(discount)));
+		//PaymentTextField.setText("RM" + discpay);
+		}
+	else {
+		discpay = String.valueOf(pay.totalPrice());
+		//discpay = String.valueOf(df2.format(pay.totalPrice(discount)));
+		//PaymentTextField.setText("RM" + discpay);
+		}
+	*/
+	
+	if (c.equals("Friday") || c.equals("Saturday")) {
+		WeekendDiscount calc = new WeekendDiscount();
+		double discount = calc.disc();
+		discpay = String.valueOf(df2.format(pay.totalPrice(discount)));
 	}
+	
+	else
+		discpay = String.valueOf(pay.totalPrice());
+	
+	PaymentTextField.setText("RM " + discpay);
+}
+
 
 }
+
+
+
+
+
